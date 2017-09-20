@@ -1,0 +1,22 @@
+.row {
+	display: flex;	
+	width: 300px;
+}
+
+.cell {
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+}
+
+#row-a {
+	background-color: blue;
+}
+
+#row-b {
+	background-color: red;
+}
+
+#row-c {
+	background-color: yellow;
+}
