@@ -83,6 +83,7 @@ function select (cell) {
 		gameState.board[cell.id] = gameState[gameState.turn]
 		if (win()) {
 			console.log(gameState.turn + ' wins!')
+			document.getElementById('refresh-btn').style.display = "block"
 		} else {
 			nextTurn()
 			cpuRandSelect()
@@ -101,7 +102,41 @@ function cpuRandSelect () {
 	gameState.board[selection] = gameState[gameState.turn]
 	if (win()) {
 		console.log(gameState.turn + ' wins!')
+   		document.getElementById('refresh-btn').style.display = "block"
 	} else {
 		nextTurn()
 	}
+}
+
+function gameStart() {
+	if (document.getElementById('x-radio').checked) {
+		gameState.player = "X"
+		gameState.computer = "O"
+	}
+	if (document.getElementById('o-radio').checked) {
+		gameState.player = "O"
+		gameState.computer = "X"
+	}
+    var x = document.getElementById('board')
+    var y = document.getElementById('start-ui')
+    x.style.display = 'block';
+    y.style.display = 'none';
+}
+
+function refresh () {
+	gameState.board.a1 = '';
+	gameState.board.a2 = '';
+	gameState.board.a3 = '';
+	gameState.board.b1 = '';
+	gameState.board.b2 = '';
+	gameState.board.b3 = '';
+	gameState.board.c1 = '';
+	gameState.board.c2 = '';
+	gameState.board.c3 = '';
+	for (var i = 0; i < cells.length; i ++) {
+		cells[i].innerHTML = '';
+	}
+	document.getElementById('board').style.display = "none"
+	document.getElementById('start-ui').style.display = "block"
+	document.getElementById('refresh-btn').style.display = "none"
 }

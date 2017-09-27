@@ -9,8 +9,20 @@
 </head>
 <body>
 
-<div class='gamebaord' id='board'>
+<!-- Start UI -->
+<div id="start-ui">
+	<button id="start-btn" onclick="gameStart()">
+		Start
+	</button>
 
+	<input type="radio" id="x-radio" name="playerChoice" value="X">
+	<label for="x-radio">X</label>
+
+	<input type="radio" id="o-radio" name="playerChoice" value="YO">
+	<label for="o-radio">O</label>
+</div>
+
+<div class='gamebaord' id='board'>
 	<div class='row' id='row-a'>
 		<div class='cell' id='a1' onclick='select(this)'>
 		</div>
@@ -38,7 +50,13 @@
 		</div>
 	</div>
 
+
 </div>
+<div id="refresh-btn">
+	<button onclick="refresh()"> refresh
+	</button>
+</div>
+
 
 </body>
 <script src="./scripts.js"></script>
